@@ -23,4 +23,6 @@ const summed = elfArray.map((elf) =>
   elf.reduce((partialSum, c) => partialSum + c, 0)
 );
 
-console.log(Math.max(...summed));
+const topThree = summed.sort((a, b) => a - b).slice(summed.length - 3);
+
+console.log(topThree.reduce((partialSum, calorie) => partialSum + calorie, 0));
